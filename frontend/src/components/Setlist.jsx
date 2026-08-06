@@ -17,7 +17,7 @@ export default function Setlist() {
     useEffect(() => {
         axios
             .get(
-                "http://localhost:8000/api/concert/active/"
+                "/api/concert/active/"
             )
             .then(response => {
                 setSongs(response.data.songs);
