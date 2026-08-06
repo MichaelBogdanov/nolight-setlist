@@ -4,14 +4,15 @@
     justify-content: center;
 
     padding: 32px 16px;
-}
 
+    position: relative;
+    z-index: 0;
+}
 
 .setlist {
     width: 100%;
     max-width: 700px;
 }
-
 
 .setlist h2 {
     margin-bottom: 24px;
@@ -35,16 +36,27 @@
 
     border-radius: 18px;
 
-    background: rgba(20, 20, 20, 0.35);
+    /*
+       Важно:
+       прозрачность позволяет видеть фон,
+       blur размывает то, что находится позади
+    */
+    background: rgba(255, 255, 255, 0.06);
 
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
+    backdrop-filter: blur(12px) saturate(120%);
+    -webkit-backdrop-filter: blur(12px) saturate(120%);
 
-    border: 1px solid rgba(255, 255, 255, .12);
+    border: 1px solid rgba(255, 255, 255, .18);
 
     box-shadow:
         0 20px 60px rgba(0, 0, 0, .35),
-        inset 0 1px rgba(255, 255, 255, .08);
+        inset 0 1px rgba(255, 255, 255, .15);
+
+    /*
+       помогает браузеру правильно
+       обработать backdrop-filter
+    */
+    transform: translateZ(0);
 }
 
 
@@ -55,7 +67,10 @@
 
     transition:
         background .25s ease;
+
+    background: rgba(0, 0, 0, 0.05);
 }
+
 
 
 .accordion-item:hover {
