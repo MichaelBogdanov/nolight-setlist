@@ -1,0 +1,60 @@
+main {
+    width: 100%;
+    padding: 10vh 10vw;
+}
+
+.logo-link {
+    position: relative;
+    z-index: 1;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        filter .35s ease,
+        box-shadow .35s ease;
+}
+
+.logo {
+    width: 100%;
+    max-width: 200px;
+
+    display: block;
+
+    user-select: none;
+    -webkit-user-drag: none;
+
+    transform-origin: center center;
+
+    transition:
+        filter .35s ease;
+}
+
+.logo-link:hover .logo {
+    filter:
+        brightness(1.04)
+        drop-shadow(0 0 14px rgba(255,255,255,.18))
+        drop-shadow(0 0 36px rgba(255,255,255,.08));
+}
+
+.logo-link:active .logo {
+    filter:
+        brightness(.96)
+        drop-shadow(0 0 8px rgba(255,255,255,.12));
+}
+
+.logo-link:focus-visible {
+    outline: none;
+
+    box-shadow:
+        0 0 0 4px rgba(255,255,255,.12);
+
+    border-radius: 16px;
+}

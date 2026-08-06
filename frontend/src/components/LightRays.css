@@ -1,0 +1,10 @@
+.light-rays-container {
+  top: 0;
+  position: fixed;
+  pointer-events: none;
+  z-index: -1;
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}

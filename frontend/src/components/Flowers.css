@@ -1,0 +1,46 @@
+.flowers {
+    position: fixed;
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+.flower {
+    position: absolute;
+
+    user-select: none;
+    -webkit-user-drag: none;
+
+    transform-origin: center center;
+    will-change: transform;
+
+    opacity: 0.18;
+
+    filter:
+        drop-shadow(0 0 10px rgba(255,255,255,.08))
+        drop-shadow(0 0 30px rgba(255,255,255,.04));
+
+    transition:
+        opacity .35s ease,
+        filter .35s ease;
+}
+
+@media (max-width: 900px) {
+
+    .flower {
+        opacity: .14;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .flower {
+        opacity: .10;
+    }
+
+}
