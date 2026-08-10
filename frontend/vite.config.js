@@ -6,6 +6,9 @@ import path from "path";
 export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, process.cwd(), "");
 
+    const httpsKey = env.HTTPS_KEY;
+    const httpsCert = env.HTTPS_CERT;
+
     return {
         plugins: [react()],
 
@@ -13,14 +16,18 @@ export default defineConfig(({ mode }) => {
             host: "0.0.0.0",
             port: 5173,
 
-            https: {
-                key: fs.readFileSync(
-                    path.resolve(process.cwd(), env.HTTPS_KEY)
-                ),
-                cert: fs.readFileSync(
-                    path.resolve(process.cwd(), env.HTTPS_CERT)
-                ),
-            },
+            ...(httpsKey && httpsCert
+                ? {
+                      https: {
+                          key: fs.readFileSync(
+                              path.resolve(process.cwd(), httpsKey)
+                          ),
+                          cert: fs.readFileSync(
+                              path.resolve(process.cwd(), httpsCert)
+                          ),
+                      },
+                  }
+                : {}),
 
             proxy: {
                 "/api": {
