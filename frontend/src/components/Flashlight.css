@@ -1,5 +1,5 @@
 .flashlight-button {
-    position: fixed;
+    position: absolute;
     right: 24px;
     top: 24px;
 
