@@ -4,6 +4,7 @@ import Particles from './components/Particles';
 import Flowers from "./components/Flowers";
 import Setlist from "./components/Setlist";
 import Logo from "./components/Logo";
+import Flashlight from "./components/Flashlight";
 
 function App() {
     return (
@@ -41,6 +42,7 @@ function App() {
             <Logo />
             <Setlist />
           </main>
+          <Flashlight />
         </>
     );
 }

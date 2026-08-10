@@ -34,7 +34,22 @@ export default function Setlist() {
         <section className="setlist-container">
             <section className="setlist">
 
-                <div className="accordion">
+                <motion.div
+                    className="accordion"
+                    initial={{
+                        height: 0,
+                    }}
+                    animate={{
+                        height: "auto",
+                    }}
+                    transition={{
+                        duration: 0.5,
+                        ease: [0.4, 0, 0.2, 1],
+                    }}
+                    style={{
+                        overflow: "hidden",
+                    }}
+                >
                     {songs.map((song, index) => (
                         <Disclosure
                             key={index}
@@ -80,11 +95,19 @@ export default function Setlist() {
                                                 }}
                                             >
                                                 <div className="accordion-panel">
-                                                    {song.lyrics.split("\n").map((line, index) => (
-                                                        <div key={index} className="lyrics-line">
-                                                            {line || "\u00A0"}
-                                                        </div>
-                                                    ))}
+                                                    {song.lyrics
+                                                        .split("\n")
+                                                        .map(
+                                                            (line, index) => (
+                                                                <div
+                                                                    key={index}
+                                                                    className="lyrics-line"
+                                                                >
+                                                                    {line ||
+                                                                        "\u00A0"}
+                                                                </div>
+                                                            )
+                                                        )}
                                                 </div>
                                             </motion.div>
                                         )}
@@ -93,7 +116,8 @@ export default function Setlist() {
                             )}
                         </Disclosure>
                     ))}
-                </div>
+                </motion.div>
+
             </section>
         </section>
     );
