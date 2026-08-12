@@ -12,6 +12,7 @@
   "dependencies": {
     "@headlessui/react": "^2.2.10",
     "@heroicons/react": "^2.2.0",
+    "@vkontakte/icons": "^3.66.0",
     "axios": "^1.19.0",
     "framer-motion": "^13.0.0",
     "ogl": "^1.0.11",

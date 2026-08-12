@@ -1,7 +1,7 @@
-.flashlight-button {
+.vk-logo-button {
     position: absolute;
     right: 24px;
-    top: calc(24px + 52px + 24px);
+    top: 24px;
 
     width: 52px;
     height: 52px;
@@ -25,6 +25,8 @@
 
     cursor: pointer;
 
+    text-decoration: none;
+
     transition:
         transform 0.35s cubic-bezier(.22, 1, .36, 1),
         background 0.35s ease,
@@ -33,7 +35,7 @@
         border-color 0.35s ease;
 }
 
-.flashlight-button:hover {
+.vk-logo-button:hover {
     transform: translateY(-3px) scale(1.04);
 
     color: white;
@@ -48,26 +50,15 @@
         inset 0 1px rgba(255, 255, 255, 0.12);
 }
 
-.flashlight-button:active {
+.vk-logo-button:active {
     transform: scale(0.96);
 }
 
-.flashlight-button.active {
-    color: white;
+.vk-logo-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    background: rgba(255, 255, 255, 0.12);
-
-    border-color: rgba(255, 255, 255, 0.3);
-
-    box-shadow:
-        0 12px 35px rgba(0, 0, 0, 0.3),
-        0 0 25px rgba(255, 255, 255, 0.16),
-        0 0 60px rgba(255, 255, 255, 0.06),
-        inset 0 1px rgba(255, 255, 255, 0.14);
-}
-
-.flashlight-icon {
-    font-size: 24px;
     line-height: 1;
 
     transition:
@@ -75,7 +66,7 @@
         filter 0.35s ease;
 }
 
-.flashlight-button.active .flashlight-icon {
+.vk-logo-button:hover .vk-logo-icon {
     transform: scale(1.08);
 
     filter:
@@ -83,15 +74,18 @@
         drop-shadow(0 0 14px rgba(255, 255, 255, 0.2));
 }
 
-.flashlight-button:disabled {
-    cursor: default;
-    opacity: 0.7;
+.vk-logo-button:focus-visible {
+    outline: none;
+
+    box-shadow:
+        0 0 0 4px rgba(255, 255, 255, 0.12),
+        0 12px 35px rgba(0, 0, 0, 0.3);
 }
 
 @media (max-width: 600px) {
-    .flashlight-button {
+    .vk-logo-button {
         right: 16px;
-        top: calc(16px + 48px + 16px);
+        top: 16px;
 
         width: 48px;
         height: 48px;
@@ -99,15 +93,8 @@
         border-radius: 14px;
     }
 
-    .flashlight-icon {
-        font-size: 22px;
+    .vk-logo-icon svg {
+        width: 22px;
+        height: 22px;
     }
-}
-
-.flashlight-button:focus-visible {
-    outline: none;
-
-    box-shadow:
-        0 0 0 4px rgba(255, 255, 255, 0.12),
-        0 12px 35px rgba(0, 0, 0, 0.3);
 }
